@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivia Canela Guzmán Antonio — Portafolio UX/UI & Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000;
+            --accent-green: #00C853;
+            --accent-pink: #FF4081;
+            --accent-soft-pink: #FFE4EC;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Space Grotesk', sans-serif;
+            border: 4px solid var(--border-color);
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+
+        /* Header */
+        .brut-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--border-color);
+            padding: 20px 40px;
+            background-color: var(--bg-color);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-box h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .brut-nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brut-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .brut-nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        .nav-cta {
+            background-color: var(--text-color);
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border: 2px solid var(--border-color);
+        }
+
+            /* Hero */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            border-bottom: 4px solid var(--border-color);
+        }
+
+        .hero-title-box {
+            padding: 60px 40px;
+            border-right: 4px solid var(--border-color);
+        }
+
+        .hero-big-text {
+            font-size: clamp(3rem, 5vw, 6rem);
+            line-height: 0.95;
+            font-weight: 700;
+            letter-spacing: -3px;
+        }
+
+        .hero-side-box {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 30px;
+            background-color: #fafafa;
+        }
+
+        .hero-side-box p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .badge-available {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            background-color: var(--accent-green);
+            color: #000;
+            padding: 6px 12px;
+            border: 2px solid var(--border-color);
+            width: fit-content;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #000;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .btn-black {
+            background-color: var(--text-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: 700;
+            text-align: center;
+            border: 2px solid var(--border-color);
+            box-shadow: 4px 4px 0px 0px var(--border-color);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .btn-black:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px var(--border-color);
+        }
+
+        /* Banner Desplazable */
+        .ticker-banner {
+            border-bottom: 4px solid var(--border-color);
+            background-color: var(--accent-green);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 15px 0;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .ticker-content span {
+            margin-right: 40px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Proyectos */
+        .projects-section {
+            border-bottom: 4px solid var(--border-color);
+        }
+
+        .section-header-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 4px solid var(--border-color);
+            background-color: #f0f0f0;
+            font-weight: 700;
+        }
+
+        .project-row {
+            display: grid;
+            grid-template-columns: 80px 3fr 1fr 1fr;
+            align-items: center;
+            padding: 30px 40px;
+            border-bottom: 4px solid var(--border-color);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .project-row:last-child {
+            border-bottom: none;
+        }
+
+        .project-row:hover {
+            background-color: var(--accent-soft-pink);
+        }
+
+        .pink-bg {
+            background-color: #FFF0F5;
+        }
+
+        .project-num {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .project-info h4 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .project-info p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .project-tag {
+            font-weight: 700;
+            background-color: var(--text-color);
+            color: #fff;
+            padding: 6px 10px;
+            width: fit-content;
+            font-size: 0.85rem;
+        }
+
+        .project-action {
+            font-weight: 700;
+            text-align: right;
+        }
+
+        /* Servicios */
+        .services-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 4px solid var(--border-color);
+        }
+
+        .services-left {
+            padding: 60px 40px;
+            border-right: 4px solid var(--border-color);
+            background-color: var(--accent-pink);
+            color: #fff;
+        }
+
+        .services-left h2 {
+            font-size: clamp(2.5rem, 4vw, 4.5rem);
+            line-height: 1;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .services-left p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .services-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 60px 1fr 40px;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 4px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .s-num {
+            color: #666;
+        }
+
+        .s-title {
+            font-size: 1.1rem;
+        }
+
+        .s-plus {
+            font-size: 1.5rem;
+            text-align: right;
+        }
+
+        /* Sobre Mí */
+        .about-section {
+            padding: 60px 40px;
+            border-bottom: 4px solid var(--border-color);
+            background-color: #fafafa;
+        }
+
+        .about-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .about-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Contacto */
+        .brut-footer {
+            background-color: var(--text-color);
+            color: #fff;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 60px 40px;
+            border-bottom: 4px solid #333;
+            gap: 30px;
+        }
+
+        .footer-cta-box h3 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-cta-box p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .footer-links a, .footer-links span {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-pink);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 40px;
+            font-size: 0.9rem;
+            color: #aaa;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: #000;
+            border: 4px solid #000;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 8px 8px 0px 0px var(--accent-pink);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .modal-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .modal-img-placeholder {
+            width: 100%;
+            height: 320px;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: #555;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .modal-img-placeholder img {
+            max-width: 150%;
+            max-height: 150%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-section, .services-section, .footer-top, .project-row {
+                grid-template-columns: 1fr;
+            }
+            .hero-title-box {
+                border-right: none;
+                border-bottom: 4px solid var(--border-color);
+            }
+            .services-left {
+                border-right: none;
+                border-bottom: 4px solid var(--border-color);
+            }
+            .project-row {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="brut-header">
+        <div class="logo-box">
+            <h1>OLIVIA GUZMÁN</h1>
+        </div>
+        <nav class="brut-nav">
+            <a href="#proyectos">TRABAJOS</a>
+            <a href="#sobre-mi">ACERCA DE</a>
+            <a href="#servicios">SERVICIOS</a>
+            <a href="#contacto" class="nav-cta">CONTACTO ↗</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-title-box">
+            <h2 class="hero-big-text">DISEÑO WEB &<br>UX/UI SIN<br>LÍMITES.</h2>
+        </div>
+        <div class="hero-side-box">
+            <p>Especialista en Desarrollo Web, UX/UI e Identidad Visual. Transformando estrategias digitales en experiencias intuitivas y de alto impacto comercial.</p>
+            <div class="badge-available">
+                <span class="dot"></span> DISPONIBLE PARA PROYECTOS / VACANTES
+            </div>
+            <a href="#proyectos" class="btn-black">VER PROYECTOS ↗</a>
+        </div>
+    </section>
+
+    <!-- Banner Desplazable -->
+    <section class="ticker-banner">
+        <div class="ticker-content">
+            <span>✦ PHOTOSHOP</span>
+            <span>✦ ILLUSTRATOR</span>
+            <span>✦ HTML</span>
+            <span>✦ CSS</span>
+            <span>✦ JAVASCRIPT</span>
+            <span>✦ FIGMA</span>
+            <span>✦ UX/UI</span>
+            <span>✦ IDENTIDAD VISUAL</span>
+            <span>✦ DISEÑO RESPONSIVO</span>
+            <span>✦ PHOTOSHOP</span>
+            <span>✦ ILLUSTRATOR</span>
+            <span>✦ HTML</span>
+            <span>✦ CSS</span>
+            <span>✦ JAVASCRIPT</span>
+            <span>✦ FIGMA</span>
+            <span>✦ UX/UI</span>
+            <span>✦ IDENTIDAD VISUAL</span>
+            <span>✦ DISEÑO RESPONSIVO</span>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="projects-section">
+        <div class="section-header-box">
+            <h3>TRABAJOS SELECCIONADOS</h3>
+            <span>(03)</span>
+        </div>
+
+        <!-- Norcul -->
+        <div class="project-row" data-project="norcul">
+            <div class="project-num">01</div>
+            <div class="project-info">
+                <h4>NORCUL</h4>
+                <p>Rediseño integral de identidad visual, catálogo digital y desarrollo web corporativo.</p>
+            </div>
+            <div class="project-tag">WEB / UI</div>
+            <div class="project-action">VER DETALLES +</div>
+        </div>
+
+        <!-- Hada Madrina -->
+        <div class="project-row pink-bg" data-project="hada">
+            <div class="project-num">02</div>
+            <div class="project-info">
+                <h4>HADA MADRINA</h4>
+                <p>Desarrollo web, maquetación de interfaces y optimización técnica de producción textil.</p>
+            </div>
+            <div class="project-tag">DESARROLLO WEB</div>
+            <div class="project-action">VER DETALLES +</div>
+        </div>
+
+        <!-- Dali Design -->
+        <div class="project-row" data-project="dali">
+            <div class="project-num">03</div>
+            <div class="project-info">
+                <h4>DALI Design</h4>
+                <p>Conceptualización visual, diseño de interfaces digitales y maquetación web.</p>
+            </div>
+            <div class="project-tag">UX / UI</div>
+            <div class="project-action">VER DETALLES +</div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services-section">
+        <div class="services-left">
+            <h2>BUILT TO<br>DISRUPT.</h2>
+            <p>Combinando estrategia visual, diseño interactivo y código limpio para construir experiencias digitales que retan lo ordinario.</p>
+        </div>
+        <div class="services-right">
+            <div class="service-item">
+                <span class="s-num">01</span>
+                <span class="s-title">DISEÑO UX/UI & FIGMA</span>
+                <span class="s-plus">+</span>
+            </div>
+            <div class="service-item">
+                <span class="s-num">02</span>
+                <span class="s-title">DESARROLLO FRONTEND (HTML/CSS/JS)</span>
+                <span class="s-plus">+</span>
+            </div>
+            <div class="service-item">
+                <span class="s-num">03</span>
+                <span class="s-title">IDENTIDAD VISUAL Y CORPORATIVA</span>
+                <span class="s-plus">+</span>
+            </div>
+            <div class="service-item">
+                <span class="s-num">04</span>
+                <span class="s-title">OPTIMIZACIÓN WEB & RESPONSIVE</span>
+                <span class="s-plus">+</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="about-section">
+        <div class="about-box">
+            <h3>SOBRE MÍ</h3>
+            <p>Soy <strong>Olivia Guzmán</strong>, Diseñadora Gráfica con más de 10 años creando experiencias visuales y digitales de alto impacto. Combino un background sólido en producción y dirección de arte con desarrollo front-end (HTML, CSS, JS). No solo diseño interfaces atractivas: entiendo a fondo cómo se estructuran y se desarrollan técnicamente. Actualizo constantemente mi stack técnico para fusionar el diseño con la ingeniería web.</p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <footer id="contacto" class="brut-footer">
+        <div class="footer-top">
+            <div class="footer-cta-box">
+                <h3>¿LISTO PARA COLABORAR?</h3>
+                <p>Escríbeme para proyectos y vacantes web.</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:oliviacguzant@gmail.com">oliviacguzant@gmail.com ↗</a>
+                <a href="https://wa.me/525531776742?text=Hola%20Olivia,%20vi%20tu%20CV%20y%20me%20interesa%20ponerme%20en%20contacto%20para%20una%20colaboración%20profesional." target="_blank" rel="noopener noreferrer">Tel: 55 3177 6742 ↗</a>
+                <span>Benito Juárez, CDMX 📍</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Olivia Canela Guzmán Antonio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Ventana para img de cada proyecto-->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">&times;</button>
+            <h3 id="modal-title">Título del Proyecto</h3>
+            <p id="modal-desc">Descripción detallada del proyecto y herramientas utilizadas.</p>
+            <div class="modal-img-placeholder" id="modal-img-container">
+                Vista previa / Captura de pantalla
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="js/main.js"></script>
+</body>
+</html>
